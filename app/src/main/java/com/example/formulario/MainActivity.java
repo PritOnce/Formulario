@@ -15,10 +15,24 @@ public class MainActivity extends AppCompatActivity {
     private CheckBox checkPassword;
     private CheckBox checkPassword2;
 
+    private String name;
+    private String lastName;
+    private String dni;
+    private int phoneNumber;
+    private String username;
+    private String email;
+    private String password;
+    private String confirmPassword;
+
+    ValidacionCampos validacionCampos;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        new ValidacionCampos(name, lastName, dni,
+                phoneNumber, username, email, password, confirmPassword);
 
         inputPassword = findViewById(R.id.inputPassword);
         checkPassword = findViewById(R.id.checkPassword);
@@ -39,6 +53,10 @@ public class MainActivity extends AppCompatActivity {
                 inputPassword.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
             }
         });
+
+    }
+
+    public void validate(){
 
     }
 
